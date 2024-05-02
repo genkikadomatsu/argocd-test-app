@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: goodbye
+  namespace: goodbye
+  labels:
+    app: goodbye
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: goodbye
+  template:
+    metadata:
+      labels:
+        app: goodbye
+    spec:
+      containers:
+      - name: goodbye
+        image: genkikadomatsu/hello:v0.0.3
+        ports:
+          - containerPort: 80
