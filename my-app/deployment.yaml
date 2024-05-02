@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: aptura/nginx:v0.1.0
+        image: genkikadomatsu/nginx:v0.1.0
         ports:
           - containerPort: 80
