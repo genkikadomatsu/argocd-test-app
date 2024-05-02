@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: goodbye
-        image: genkikadomatsu/hello:v0.0.3
+        image: genkikadomatsu/goodbye:v0.0.1
         ports:
           - containerPort: 80
