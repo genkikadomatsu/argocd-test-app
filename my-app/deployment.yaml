@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: hello
-        image: genkikadomatsu/hello:v0.0.2
+        image: genkikadomatsu/hello:v0.0.3
         ports:
           - containerPort: 80
