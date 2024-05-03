@@ -11,7 +11,24 @@ spec:
   source:
     repoURL: https://github.com/genkikadomatsu/argocd-test-app
     targetRevision: HEAD
-    path: environments/staging/goodbye-app
+    path: helm-charts/example
+    # path: helm-charts/staging/goodbye-app
+    # ADDITIONAL HELM CONFIG HERE
+    helm:
+      version: v3 # helm version
+      releaseName: goodbye # This is passed to the helm chart
+      passCredentials: false
+      parameters: # TODO use values.yaml instead
+        - name: "image.tag"
+          value: v0.0.1 # This is passed to the helm chart
+    #   This is for another module, not needed for now
+    #   values: |
+    #     defaultArgs:
+    #     - --cert-dir=/tmp
+    #     - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
+    #     - --kubelet-use-node-status-port
+    #     - --metric-resolution=15s
+    #     - --kubelet-insecure-tls
   destination:
     server: https://kubernetes.default.svc
   syncPolicy:
