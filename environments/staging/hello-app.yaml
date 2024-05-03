@@ -11,7 +11,7 @@ spec:
   source:
     repoURL: https://github.com/genkikadomatsu/argocd-test-app
     targetRevision: HEAD
-    path: helm-charts/example
+    path: helm-charts/example # The path to the helm chart
     # path: helm-charts/staging/goodbye-app
     # ADDITIONAL HELM CONFIG HERE
     helm:
@@ -20,7 +20,7 @@ spec:
       passCredentials: false
       parameters: # TODO use values.yaml instead
         - name: "image.tag"
-          value: v0.0.1 # This is passed to the helm chart
+          value: v0.0.3 # This is passed to the helm chart
     #   This is for another module, not needed for now
     #   values: |
     #     defaultArgs:
